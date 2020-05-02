@@ -2,13 +2,17 @@
 
 # 概要
 
-- BaaS の firebase を利用したログイン認証システムを Vue.js で実装
+- BaaS の firebase を利用したログイン認証システムを Vue.js で実装(Twitter連携版)
 
 # TODO
 
-- firebase
+*1 firebase
   - 発行される firebaseConfig を[config/env.js](https://github.com/cSyu2611/vue-authentication-with-firebase-ver-Twitter/blob/master/config/env_tmp.js)に貼り付け（env_tmp.js をコピー＆リネーム）
-  - メール認証を有効にする
+  - Twitter認証を有効にする(APIキーとシークレットの登録）
+  - コールバックURLをコピーしておく
+  
+*2 Twitter App
+  - Webサイト
 
 # 動作確認
 
