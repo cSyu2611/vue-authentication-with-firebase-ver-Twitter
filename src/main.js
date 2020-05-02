@@ -8,6 +8,7 @@ import _env from '../config/env.js'
 Vue.config.productionTip = false
 
 firebase.initializeApp(_env.firebaseConfig);
+export const providerTwitter = new firebase.auth.TwitterAuthProvider();
 
 new Vue({
   router,

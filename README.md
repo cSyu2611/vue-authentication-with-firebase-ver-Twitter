@@ -1,4 +1,4 @@
-# vue-authentication-with-firebase
+# vue-authentication-with-firebase-ver-Twitter
 
 # 概要
 
@@ -7,18 +7,20 @@
 # TODO
 
 - firebase
-  - 発行される firebaseConfig を[config/env.js](https://github.com/cSyu2611/vue-authentication-with-firebase/blob/master/config/env_tmp.js)に貼り付け（env_tmp.js をコピー＆リネーム）
+  - 発行される firebaseConfig を[config/env.js](https://github.com/cSyu2611/vue-authentication-with-firebase-ver-Twitter/blob/master/config/env_tmp.js)に貼り付け（env_tmp.js をコピー＆リネーム）
   - メール認証を有効にする
 
 # 動作確認
 
 - firebase との連携ができていれば、ログイン、アカウント登録ができるはずです。
 - vue-router でアクセス制限がされているかの確認
+
   - ログインした状態で'''localhost:8080/'''にリダイレクトされるか=>[ログインページ](http://localhost:8080/signIn), [アカウント登録ページ](http://localhost:8080/signUp)
   - ログインしていない状態で'''localhost:8080/signIn'''にリダイレクトされるか=>[ホーム画面](http://localhost:8080/)
-  
+
 # 今後の予定
-* これをベースにチャット機能のプロトタイプを作成する
+
+- これをベースにチャット機能のプロトタイプを作成する
 
 ## Project setup
 

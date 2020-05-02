@@ -5,39 +5,12 @@
 </template>
 
 <script>
-import firebase from "firebase"
 export default {
   name: "App",
   components: {
-
   },
   data(){
-    return{
-      login: true,
-    }
   },
-  computed: {
-    userState: {
-      get: function(){
-        var result = true
-        firebase.auth().onAuthStateChanged((user)=>{
-          if(user){
-            console.log("ログインされてる")
-            result = true
-          }
-          else{
-            console.log("ログインされてない")
-            result = false
-          }
-        })
-        console.log(result)
-        return result
-      },
-      set: function(){
-
-      }
-    }
-  }
 }
 </script>
 

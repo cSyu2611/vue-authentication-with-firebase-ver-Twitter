@@ -1,37 +1,26 @@
 <template>
   <div class="signup">
-      <div id="nav">
-        <router-link to="/signIn">ログイン</router-link> | 
-        <router-link to="/signUp">アカウント作成</router-link>
-    </div>
-    <h2>Gmailでアカウント登録</h2>
-    <input type="text" placeholder="example@gmail.com" v-model="username" />
-    <input type="password" placeholder="Password" v-model="password" />
-    <button @click="signUp">アカウント登録</button>
-    <p>
-      すでにアカウントをお持ちの方は
-      <router-link to="/signIn">こちら</router-link>
-    </p>
+    <h2>Twitterアカウントと連携</h2>
+    <button variant="primary" @click="signUp">連携</button>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import {providerTwitter} from '../main.js'
 export default {
   name: "Signup",
   data() {
     return {
-      username: "",
-      password: ""
     };
   },
   methods: {
     signUp: function() {
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.username, this.password)
-        .then(user => {
-          alert("Create account: ", user.email);
+        .signInWithPopup(providerTwitter)
+        .then(() => {
+          this.$router.push('/')
         })
         .catch(error => {
           alert(error.message);

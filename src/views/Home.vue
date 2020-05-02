@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    ホーム画面
-    <p>ようこそ、{{firebase.auth().currentUser.email}}さん</p>
+    <p>ようこそ、{{this.$store.state.user_name}}さん</p>
+    <img :src="this.$store.state.profile_image_url" width="50px;" height="50px;"/>
     <SignOut/>
   </div>
 </template>
@@ -13,6 +13,16 @@ export default {
   name: 'Home',
   components: {
     SignOut
+  },
+  created(){
+    const obj = {
+      profile:{
+
+      }
+    };
+    obj.profile.name = firebase.auth().currentUser.providerData[0].displayName
+    obj.profile.profile_image_url = firebase.auth().currentUser.providerData[0].photoURL
+    this.$store.commit("setCredential", obj)
   },
   data(){
     return {
